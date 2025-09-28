@@ -1,5 +1,5 @@
 """
-Задача: https://leetcode.com/problems/binary-tree-inorder-traversal/
+Задача: https://leetcode.com/problems/symmetric-tree/
 Подсказки:
 """
 from typing import Optional
