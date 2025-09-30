@@ -34,6 +34,7 @@ class Solution(object):
             )
         return isMirror(root.left, root.right)
 
+
 def build_tree(values: list[Optional[int]]) -> Optional[TreeNode]:
     """Строит бинарное дерево из списка значений в формате уровня"""
     if not values:
@@ -65,7 +66,7 @@ if __name__=='__main__':
 
     tests = [
         ([1,2,2,3,4,4,3], True),
-        ([[1,2,2,None,3,None,3], False]),
+        ([1,2,2,None,3,None,3], False),
     ]
 
     for i, (x, expected) in enumerate(tests, 1):
