@@ -16,6 +16,15 @@ class Solution(object):
         return result
 
 
+def int_from_excel_column(column: str) -> int:
+    """Обратная задача"""
+    result = 0
+    for ch in column:
+        val = ord(ch) - ord('A') + 1
+        result = result * 26 + val
+    return result
+
+
 if __name__ == '__main__':
     cls = Solution()
 
