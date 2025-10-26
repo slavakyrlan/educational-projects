@@ -8,12 +8,23 @@ class Solution(object):
     def containsNearbyDuplicate(
             self, nums: list[int], k: int
     ) -> bool:
-        len_ = len(nums)
-        for i in range(len_):
-            # начинаем с i+1 чтобы избежать i == j
-            for j in range(i+1, len_):
-                if nums[i] == nums[j] and abs(i-j) <= k:
-                    return True
+        index_map = {}
+        for i, num in enumerate(nums):
+            if num in index_map and i - index_map[num] <= k:
+                return True
+            index_map[num] = i
+        return False
+
+    def containsNearbyDuplicate2(
+            self, nums: list[int], k: int
+    ) -> bool:
+        hashSet = set()
+        for i in range(len(nums)):
+            if nums[i] in hashSet:
+                return True
+            hashSet.add(nums[i])
+            if len(hashSet) > k:
+                hashSet.remove(nums[i - k])
         return False
 
 
