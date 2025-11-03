@@ -153,9 +153,9 @@ SELECT
 	b.name as band_name
 FROM album as a
 FULL OUTER JOIN band as b
-	ON a.band_id = b.band_id;
+	ON a.band_id = b.band_id
 	--AND b.name is NULL
-
+;
 
 /* self join соединение таб сама собой
 1 духовые parent null
